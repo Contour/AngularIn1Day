@@ -4,39 +4,43 @@
 
 describe('my app', function() {
 
-
-  it('should automatically redirect to /view1 when location hash/fragment is empty', function() {
-    browser.get('index.html');
-    expect(browser.getLocationAbsUrl()).toMatch("/view1");
+  it('should contain h1 header with text: Angular In 1 Day', function() {
+    browser.get('index.html#/');
+    expect(element(by.css('h1')).getText()).toBe("Angular In 1 Day");
   });
-
-
-  describe('view1', function() {
-
-    beforeEach(function() {
-      browser.get('index.html#/view1');
-    });
-
-
-    it('should render view1 when user navigates to /view1', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 1/);
-    });
-
-  });
-
-
-  describe('view2', function() {
-
-    beforeEach(function() {
-      browser.get('index.html#/view2');
-    });
-
-
-    it('should render view2 when user navigates to /view2', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 2/);
-    });
-
-  });
+  // example:
+  //it('should automatically redirect to /view1 when location hash/fragment is empty', function() {
+  //  browser.get('index.html');
+  //  expect(browser.getLocationAbsUrl()).toMatch("/view1");
+  //});
+  //
+  //
+  //describe('view1', function() {
+  //
+  //  beforeEach(function() {
+  //    browser.get('index.html#/view1');
+  //  });
+  //
+  //
+  //  it('should render view1 when user navigates to /view1', function() {
+  //    expect(element.all(by.css('[ng-view] p')).first().getText()).
+  //      toMatch(/partial for view 1/);
+  //  });
+  //
+  //});
+  //
+  //
+  //describe('view2', function() {
+  //
+  //  beforeEach(function() {
+  //    browser.get('index.html#/view2');
+  //  });
+  //
+  //
+  //  it('should render view2 when user navigates to /view2', function() {
+  //    expect(element.all(by.css('[ng-view] p')).first().getText()).
+  //      toMatch(/partial for view 2/);
+  //  });
+  //
+  //});
 });
