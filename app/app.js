@@ -1,5 +1,14 @@
 var app = angular.module("angularIn1Day", []);
 
-app.controller("cardController", function($scope) {
-    $scope.cards = [{"artist":"Douglas Shuler","id":"9d91ef4896ab4c1a5611d4d06971fc8026dd2f3f","name":"Animate Artifact","text":"Enchant artifact. As long as enchanted artifact isn t a creature, it s an artifact creature with power and toughness each equal to its converted mana cost."},{"artist":"Anson Maddocks","id":"d8b74ea7f050c8c05588e002f0264643fc90209b","name":"Animate Dead","text":"Enchant creature card in a graveyard. When Animate Dead enters the battlefield, if it s on the battlefield, it loses \"enchant creature card in a graveyard\" and gains \"enchant creature put onto the battlefield with Animate Dead.\" Return enchanted creature card to the battlefield under your control and attach Animate Dead to it. When Animate Dead leaves the battlefield, that creature s controller sacrifices it.. Enchanted creature gets -1/-0."},{"artist":"Dan Frazier","id":"6ba9537d0f1733e4a01927bdf60bfb5122e5a709","name":"Animate Wall","text":"Enchant Wall. Enchanted Wall can attack as though it didn t have defender."}];
+app.controller("cardController", function($scope, cardService) {
+    $scope.cards = [];
+    cardService.getCards().then(function(cards) {
+        $scope.cards = cards;
+    });
+});
+
+app.service("cardService", function($http) {
+    this.getCards = function () {
+        return $http.get("/getCards");
+    }
 });
