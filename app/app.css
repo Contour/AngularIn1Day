@@ -19,12 +19,32 @@ header img, footer img {
 }
 
 section {
-    margin: 0 auto;
     text-align: center;
     padding-top: 10em;
+    margin-right: 130px;
 }
 
 section h1 {
     font-size: 4em;
     font-family: monospace;
+}
+
+section ul {
+    text-align: left;
+}
+
+section li {
+    background-color: lightgrey;
+    list-style: none;
+    padding: 20px;
+    margin: 5px;
+    border: 1px solid black;
+}
+
+section li .element {
+    padding: 3px;
+}
+
+section li .element.name {
+    font-weight: bold;
 }
