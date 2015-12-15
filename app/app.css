@@ -1,2 +1,14 @@
 /* app css stylesheet */
 
+td, th {
+	padding: 10px;
+	border: 1px solid gray;
+}
+
+th {
+	background-color: gray;
+}
+
+tr.even {
+	background-color: lightgray;
+}
