@@ -1,14 +1,48 @@
 /* app css stylesheet */
 
+header {
+    height: 3em;
+    letter-spacing: 0.1em;
+    line-height: 3em;
+    right: 0.7em;
+    top: 0.7em;
+    position: fixed;
+    z-index: 3;
+}
+
+footer {
+    height: 3em;
+    letter-spacing: 0.1em;
+    line-height: 3em;
+    right: 0.7em;
+    bottom: 0.7em;
+    position: fixed;
+    z-index: 3;
+}
+
+header img, footer img {
+    width: 120px;
+}
+
+section {
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 10em;
+}
+
+section h1 {
+    font-size: 2em;
+}
+
 td, th {
-	padding: 10px;
-	border: 1px solid gray;
+    padding: 10px;
+    border: 1px solid gray;
 }
 
 th {
-	background-color: gray;
+    background-color: gray;
 }
 
 tr.even {
-	background-color: lightgray;
+    background-color: lightgray;
 }

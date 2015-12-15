@@ -9,8 +9,17 @@
   <link rel="stylesheet" href="app.css">
 </head>
 <body>
-  <div ng-include="'./views/sample.html'"></div>
-  <ng-view></ng-view>
+  <header>
+    <img src="images/angular_icon.png" alt="Angular"/>
+  </header>
+
+  <section>
+    <ng-view></ng-view>
+  </section>
+
+  <footer>
+    <img src="images/Contour-logo.png" alt="Contour Technology"/>
+  </footer>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="app.js"></script>
