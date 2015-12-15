@@ -1,0 +1,19 @@
+<div>
+	<h1>Angular In 1 Day</h1>
+	<input type="text" class="text" ng-model="search">
+	<button ng-click="main.searchText = search">Search</button>
+
+	<table>
+		<tr>
+			<th ng-click="sort = 'name'">Card Name</th>
+			<th ng-click="sort = 'artist'">Card Artist</th>
+			<th ng-click="sort = 'cmc'">Card Mana Cost</th>
+		</tr>
+		<tr ng-click="main.openDetail(card.id)" ng-class="$even ? 'even': 'odd'" ng-repeat="card in main.cards | filter: main.searchText| orderBy: sort">
+			<td>{{card.name}}</td>
+			<td>{{card.artist}}</td>
+			<td>{{card.cmc}}</td>
+		</tr>
+
+	</table>
+</div>
