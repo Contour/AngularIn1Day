@@ -18,6 +18,9 @@
     "shelljs": "^0.2.6",
     "express": "4.13.3",
     "body-parser": "1.14.1",
+    "dateformat": "1.0.12",
+    "express": "4.13.3",
+    "body-parser": "1.14.1",
     "dateformat": "1.0.12"
   },
   "scripts": {
