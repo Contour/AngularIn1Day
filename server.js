@@ -61,7 +61,7 @@ app.post('/card', function (req, res) {
     var found = false;
 
     for (var i =0; i < lea.cards.length; i++) {
-        if (card.id == card.id) {
+        if (lea.cards[i].id == card.id) {
             lea.cards[i] = card;
             found = true;
             res.send("updated");
