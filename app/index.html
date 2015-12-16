@@ -15,8 +15,10 @@
 
   <section ng-controller="cardController">
     <h1>Angular In 1 Day</h1>
+      <input type="text" ng-model="inputText"/>
+      <button ng-click="search = inputText">Search</button>
       <ul>
-          <li class="item" ng-repeat="card in cards">
+          <li class="item" ng-repeat="card in cards | filter: search">
               <div class="element name" ng-bind="card.name"></div>
               <div class="element text" ng-bind="card.text"></div>
               <div class="element artist" ng-bind="card.artist"></div>
