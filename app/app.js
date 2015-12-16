@@ -13,10 +13,12 @@ app.service("cardService", function($http) {
     }
 });
 
-app.filter("ctUppercase", function(element, attribute) {
-    if (angular.isString(element)) {
-        // sreturn element uppercase
-    }
+app.filter("touppercase", function() {
+    return function(element) {
+        if (angular.isString(element)) {
+            return element.toUpperCase();
+        }
 
-    return element;
+        return element;
+    }
 });
