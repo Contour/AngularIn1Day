@@ -48,3 +48,7 @@ section li .element {
 section li .element.name {
     font-weight: bold;
 }
+
+.hl {
+    background-color: yellow;
+}

@@ -17,6 +17,10 @@ app.service("cardService", function($http) {
 
 app.filter("highlight", function() {
     return function(stringElement, query) {
-        // return <span class='hl'> matchingText </span>
+        if (stringElement && query && stringElement.indexOf(query) > -1) {
+            return stringElement.replace(new RegExp(query, 'g'), "<span class='hl'>"+query+"</span>");
+        } else {
+            return stringElement;
+        }
     }
 });
