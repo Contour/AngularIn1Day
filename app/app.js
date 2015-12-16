@@ -12,3 +12,11 @@ app.service("cardService", function($http) {
         return $http.get("/cards");
     }
 });
+
+app.filter("ctUppercase", function(element, attribute) {
+    if (angular.isString(element)) {
+        // sreturn element uppercase
+    }
+
+    return element;
+});
