@@ -21,8 +21,15 @@ app.use(express.static('app'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get('/card/:id', function (req, res) {
-    console.log("[CT] get: /card");
+app.get('/card', function (req, res) {
+    var id = req.query.id;
+    console.log("[CT] get: /card?id=",id);
+    for (var i =0 ; i< lea.cards.length; i++) {
+        if (lea.cards[i].id == id) {
+            res.send(lea.cards[i]);
+            break;
+        }
+    }
 });
 
 app.get('/cards', function (req, res) {
