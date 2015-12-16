@@ -12,3 +12,16 @@ app.service("cardService", function($http) {
         return $http.get("/cards");
     }
 });
+
+app.directive("cardItem", function() {
+    return {
+        "type": "E",
+        "templateUrl": "templates/card.html",
+        "scope": {
+            "item": "="
+        },
+        "link": function($scope, $element, $attrs) {
+            console.log($scope.item);
+        }
+    }
+})
