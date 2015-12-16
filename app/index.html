@@ -19,9 +19,9 @@
       <button ng-click="search = inputText">Search</button>
       <ul>
           <li class="item" ng-repeat="card in cards | filter: search">
-              <div class="element name" ng-bind="card.name"></div>
-              <div class="element text" ng-bind="card.text"></div>
-              <div class="element artist" ng-bind="card.artist"></div>
+              <div class="element name" ng-bind-html="card.name | highlight: search"></div>
+              <div class="element text" ng-bind-html="card.text | highlight: search"></div>
+              <div class="element artist" ng-bind-html="card.artist | highlight: search"></div>
           </li>
       </ul>
 

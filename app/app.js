@@ -1,4 +1,6 @@
-var app = angular.module("angularIn1Day", []);
+var app = angular.module("angularIn1Day", []).config(function($sceProvider) {
+    $sceProvider.enabled(false);
+});
 
 app.controller("cardController", function($scope, cardService) {
     $scope.cards = [];
@@ -10,5 +12,11 @@ app.controller("cardController", function($scope, cardService) {
 app.service("cardService", function($http) {
     this.getCards = function () {
         return $http.get("/cards");
+    }
+});
+
+app.filter("highlight", function() {
+    return function(stringElement, query) {
+        // return <span class='hl'> matchingText </span>
     }
 });
