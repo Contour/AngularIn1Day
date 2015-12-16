@@ -1,19 +1,11 @@
-<div>
+<section ng-controller="cardController">
 	<h1>Angular In 1 Day</h1>
-	<input type="text" class="text" ng-model="search">
-	<button ng-click="main.searchText = search">Search</button>
+	<input type="text" ng-model="inputText"/>
+	<button ng-click="search = inputText">Search</button>
+	<ul>
+		<li class="item" ng-repeat="card in cards | filter: search">
+			<card-item item="card" ng-click="showDetails(card.id)" style="cursor: pointer;"></card-item>
+		</li>
+	</ul>
 
-	<table>
-		<tr>
-			<th ng-click="sort = 'name'">Card Name</th>
-			<th ng-click="sort = 'artist'">Card Artist</th>
-			<th ng-click="sort = 'cmc'">Card Mana Cost</th>
-		</tr>
-		<tr ng-click="main.openDetail(card.id)" ng-class="$even ? 'even': 'odd'" ng-repeat="card in main.cards | filter: main.searchText| orderBy: sort">
-			<td>{{card.name}}</td>
-			<td>{{card.artist}}</td>
-			<td>{{card.cmc}}</td>
-		</tr>
-
-	</table>
-</div>
+</section>

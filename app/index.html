@@ -13,17 +13,7 @@
     <img src="images/angular_icon.png" alt="Angular"/>
   </header>
 
-  <section ng-controller="cardController">
-    <h1>Angular In 1 Day</h1>
-      <input type="text" ng-model="inputText"/>
-      <button ng-click="search = inputText">Search</button>
-      <ul>
-          <li class="item" ng-repeat="card in cards | filter: search">
-              <card-item item="card"></card-item>
-          </li>
-      </ul>
-
-  </section>
+  <ng-view></ng-view>
 
   <footer>
     <img src="images/Contour-logo.png" alt="Contour Technology"/>
