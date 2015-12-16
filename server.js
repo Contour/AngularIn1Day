@@ -12,8 +12,7 @@ function randomDate(start, end) {
 
 for (var i =0; i < lea.cards.length; i++) {
     var date = randomDate(new Date(2001, 0, 1), new Date());
-    var formattedDate = dateFormat(date, "YYYY/DD/MM");
-    lea.cards[i].date = formattedDate;
+    lea.cards[i].date = dateFormat(date, "YYYY/DD/MM");
 }
 console.log("[CT] database size:",lea.cards.length);
 console.log("[CT] Setting server and configuring");
@@ -29,16 +28,16 @@ app.get('/card/:id', function (req, res) {
 app.get('/cards', function (req, res) {
     // hardcoded per page value to 10 to simplify
     var perpage = 10;
-    var query = req.query.id | "*";
-    var page = req.query.page | 0; // set default page to 1
-    console.log("[CT] get: /cards", page);
+    var query = req.query.query || "*";
+    var page = req.query.page || 0; // set default page to 1
+    console.log("[CT] get: /cards?page=", page, "&query=",query);
     if(query != "*") {
         var temp = [];
         for (var i =0; i < lea.cards.length; i++) {
-            if (lea.cards[i].name.search(/query/i) != -1 ||
-                lea.cards[i].text.search(/query/i) != -1 ||
-                lea.cards[i].flavor.search(/query/i) != -1 ||
-                lea.cards[i].artist.search(/query/i) != -1) {
+            if (lea.cards[i].name && lea.cards[i].name.search(/query/i) != -1 ||
+                lea.cards[i].text && lea.cards[i].text.search(/query/i) != -1 ||
+                lea.cards[i].flavor && lea.cards[i].flavor.search(/query/i) != -1 ||
+                lea.cards[i].artist && lea.cards[i].artist.search(/query/i) != -1) {
                 temp.push(lea.cards[i]);
             }
         }
